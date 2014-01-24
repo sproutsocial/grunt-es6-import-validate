@@ -1,0 +1,28 @@
+{
+  "name": "grunt-es6-import-validate",
+  "version": "0.0.1",
+  "description": "A Grunt task for validating ES6 Module import statements",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sproutsocial/grunt-es6-import-validate.git"
+  },
+  "keywords": [
+    "gruntplugin",
+    "es6",
+    "module"
+  ],
+  "author": "Jacob Gable <jacob.gable@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "dependencies": {
+    "bluebird": "~1.0.0",
+    "lodash-node": "~2.4.1",
+    "es6-import-validate": "0.0.1"
+  }
+}
