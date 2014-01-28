@@ -26,7 +26,7 @@ module.exports = function (grunt) {
 
 	grunt.initConfig(cfg);
 
-	grunt.registerTask('default', ['validate']);
+	grunt.registerTask('default', ['validate-imports']);
 };
 ```
 
