@@ -5,7 +5,7 @@ var path = require('path');
 module.exports = function (grunt) {
 
 	var cfg = {
-		'validate': {
+		'validate-imports': {
 			ok: {
 				files: [{
 					expand: true,
@@ -27,5 +27,5 @@ module.exports = function (grunt) {
 
 	grunt.initConfig(cfg);
 
-	grunt.registerTask('default', ['validate']);
+	grunt.registerTask('default', ['validate-imports']);
 };

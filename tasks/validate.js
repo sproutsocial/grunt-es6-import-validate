@@ -6,7 +6,7 @@ var _ = require('lodash-node'),
 var ES6ModuleFile = require('es6-import-validate').ES6ModuleFile;
 
 module.exports = function (grunt) {
-	grunt.registerMultiTask('validate', function () {
+	grunt.registerMultiTask('validate-imports', function () {
 		var done = this.async(),
 			// Group everything by cwd value
 			moduleFiles = this.files.reduce(function (all, file) {
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
 				});
 
 				grunt.log.writeln();
-				grunt.fail.warn('Validation errors found in modules');
+				grunt.fail.warn('Validation errors found in modules.');
 
 				done();
 			});
