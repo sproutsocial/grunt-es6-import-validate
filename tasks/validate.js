@@ -22,7 +22,7 @@ module.exports = function (grunt) {
 						cwd: cwd
 					})
 					.then(function (info) {
-						grunt.log.write('>> '.green + files.length + ' files validated...').ok();
+						grunt.log.ok('' + files.length + ' files validated.');
 					});
 			});
 
