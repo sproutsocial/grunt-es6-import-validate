@@ -30,7 +30,38 @@ module.exports = function (grunt) {
 };
 ```
 
-## License
+### Options
+
+- `whitelist`
+
+Supply an object with keys representing the name of the module and values representing their exports.
+
+```js
+var cfg = {
+	'validate-imports': {
+		options: {
+			whitelist: {
+				'custommodule': ['default', 'named1', 'named2']
+			}
+		},
+		ok: {
+			files: [{
+				expand: true,
+				cwd: path.join(__dirname, 'scripts'),
+				src: ['*.js']
+			}]
+		}
+	}
+};
+```
+
+Now import statements like 
+
+    import { named1 } from 'custommodule';
+
+will resolve correctly.
+
+### License
 
 The MIT License (MIT)
 
