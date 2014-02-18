@@ -1,6 +1,7 @@
 
 import { missing } from 'foo';
 import { bar } from 'bar';
+import Resolver from 'resolver';
 
 var bim = {
 	property: true

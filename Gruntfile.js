@@ -25,6 +25,19 @@ module.exports = function (grunt) {
 					src: ['foo.js', 'bar.js']
 				}]
 			},
+			whitelisted: {
+				options: {
+					whitelist: {
+						foo: ['default', 'missing'],
+						resolver: ['default']
+					}
+				},
+				files: [{
+					expand: true,
+					cwd: path.join(__dirname, 'tests', 'fixtures'),
+					src: ['*.js']
+				}]
+			},
 			fail: {
 				files: [{
 					expand: true,
@@ -38,6 +51,8 @@ module.exports = function (grunt) {
 	grunt.loadTasks('tasks');
 
 	grunt.initConfig(cfg);
+
+	grunt.registerTask('validate', ['validate-imports:ok', 'validate-imports:renamed', 'validate-imports:whitelisted']);
 
 	grunt.registerTask('default', ['validate-imports']);
 };
