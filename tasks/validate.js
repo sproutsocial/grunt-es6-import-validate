@@ -13,7 +13,8 @@ module.exports = function (grunt) {
 	grunt.registerMultiTask('validate-imports', function () {
 		var done = this.async(),
 			opts = this.options({
-				moduleName: defaultModuleNamer
+				moduleName: defaultModuleNamer,
+				whitelist: {}
 			}),
 			// Group everything by cwd value
 			moduleFiles = this.files.reduce(function (all, file) {
@@ -41,7 +42,8 @@ module.exports = function (grunt) {
 		var allValidations = _.map(moduleFiles, function (files, cwd) {
 				return ES6ModuleFile.validateImports(files, {
 						cwd: cwd,
-						ES6ModuleFile: TaskES6ModuleFile
+						ES6ModuleFile: TaskES6ModuleFile,
+						whitelist: opts.whitelist
 					})
 					.then(function (info) {
 						grunt.log.ok('' + files.length + ' files validated.');

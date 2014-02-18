@@ -1,10 +1,10 @@
 {
   "name": "grunt-es6-import-validate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Grunt task for validating ES6 Module import statements",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/jshint/bin/jshint Gruntfile.js tasks/*.js tests/**/*.js && grunt validate-imports:ok validate-imports:renamed"
+    "test": "node_modules/jshint/bin/jshint Gruntfile.js tasks/*.js tests/**/*.js && grunt validate"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
   "dependencies": {
     "bluebird": "~1.0.0",
     "lodash-node": "~2.4.1",
-    "es6-import-validate": "~0.0.4"
+    "es6-import-validate": "~0.0.5"
   },
   "devDependencies": {
     "jshint": "~2.4.3"
