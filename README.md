@@ -6,8 +6,7 @@ A Grunt task for validating ES6 Module import statements
 ## Example
 
 ```javascript
-var path = require('path');
-
+// Gruntfile.js
 module.exports = function (grunt) {
 
 	var cfg = {
@@ -15,8 +14,8 @@ module.exports = function (grunt) {
 			ok: {
 				files: [{
 					expand: true,
-					cwd: path.join(__dirname, 'scripts'),
-					src: ['*.js']
+					cwd: 'scripts',
+					src: ['**/*.js']
 				}]
 			}
 		}
@@ -60,6 +59,31 @@ Now import statements like
     import { named1 } from 'custommodule';
 
 will resolve correctly.
+
+- `moduleName`
+
+Supply a function that resolves the module name based on a relative filePath from the current working directory.
+
+```js
+var cfg = {
+	'validate-imports': {
+		renamed: {
+			options: {
+				moduleName: function (filePath) {
+					// 'foo' -> 'appkit/foo'
+					// 'other/bar' -> 'appkit/other/bar'
+					return 'appkit/' + filePath;
+				}
+			},
+			files: [{
+				expand: true,
+				cwd: 'scripts',
+				src: ['foo.js', 'bar.js']
+			}]
+		}
+	}	
+};
+```
 
 ### License
 
