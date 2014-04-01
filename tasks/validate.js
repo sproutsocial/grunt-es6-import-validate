@@ -57,9 +57,18 @@ module.exports = function (grunt) {
 			})
 			.catch(function (errors) {
 				// Show messages if failures
-				errors.forEach(function (err) {
-					grunt.log.error(err.name.yellow + ': '.red + err.message.yellow);
-				});
+				if(_.isArray(errors)) {
+					errors.forEach(function (err) {
+						grunt.log.error(err.name.yellow + ': '.red + err.message.yellow);
+					});
+				} else {
+					grunt.log.error(errors.name.yellow + ': '.red + errors.message.yellow);
+					grunt.log.writeln();
+					grunt.fail.fatal('Javscript parse error');
+
+					done();
+					return;
+				}
 
 				grunt.log.writeln();
 				grunt.fail.warn('Validation errors found in modules.');
