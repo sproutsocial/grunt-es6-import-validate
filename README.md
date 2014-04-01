@@ -1,7 +1,9 @@
 grunt-es6-import-validate
 =========================
 
-A Grunt task for validating ES6 Module import statements
+A Grunt task for validating ES6 Module import statements.
+
+[![Build Status](https://travis-ci.org/sproutsocial/grunt-es6-import-validate.svg)](https://travis-ci.org/sproutsocial/grunt-es6-import-validate)
 
 ## Example
 
