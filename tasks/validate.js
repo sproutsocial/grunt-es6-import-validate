@@ -57,7 +57,7 @@ module.exports = function (grunt) {
 			})
 			.catch(function (errors) {
 				// Show messages if failures
-				if(_.isArray(errors)) {
+				if (_.isArray(errors)) {
 					errors.forEach(function (err) {
 						grunt.log.error(err.name.yellow + ': '.red + err.message.yellow);
 					});
