@@ -18,7 +18,7 @@
   "author": "Jacob Gable <jacob.gable@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "grunt": "~0.4.2"
+    "grunt": ">=0.4.0"
   },
   "dependencies": {
     "bluebird": "~1.0.0",
